@@ -120,24 +120,25 @@ Analyzes and corrects Urdu text, returning structured error information.
 
 **Request Body:**
 {
-"text": "Your Urdu text here"
+  "text": "Your Urdu text here"
 }
 
 
 **Response:**
 {
-"original_text": "Original input text",
-"corrected_text_full": "Fully corrected text",
-"errors": [
-{
-"text": "Error text",
-"start": 0,
-"end": 5,
-"suggestions": ["Correction suggestion"],
-"reason": "Grammar/spelling correction"
+  "original_text": "Original input text",
+  "corrected_text_full": "Fully corrected text",
+  "errors": [
+    {
+      "text": "Error text",
+      "start": 0,
+      "end": 5,
+      "suggestions": ["Correction suggestion"],
+      "reason": "Grammar/spelling correction"
+    }
+  ]
 }
-]
-}
+
 
 
 ### `GET /health`
