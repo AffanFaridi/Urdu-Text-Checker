@@ -1,0 +1,506 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables for Consistent Theming */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #64748b;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --warning-color: #f59e0b;
+    --background-color: #f8fafc;
+    --surface-color: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --border-hover: #cbd5e1;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Noto Nastaliq Urdu', sans-serif;
+    background: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #3b82f6 100%);
+    color: white;
+    padding: 2rem 0;
+    box-shadow: var(--shadow-lg);
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.logo h1 {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    direction: rtl;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+/* Main Content */
+.main-content {
+    padding: 3rem 0;
+    min-height: calc(100vh - 200px);
+}
+
+/* Introduction Section */
+.intro-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.intro-section h2 {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    direction: rtl;
+}
+
+.intro-section p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Input Section */
+.input-section {
+    margin-bottom: 3rem;
+}
+
+.input-wrapper {
+    background: var(--surface-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.input-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.input-header i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.char-counter {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+#input {
+    width: 100%;
+    min-height: 200px;
+    padding: 1.5rem;
+    border: none;
+    outline: none;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    resize: vertical;
+    direction: rtl;
+    text-align: right;
+    background: var(--surface-color);
+}
+
+#input::placeholder {
+    color: #a0a0a0;
+    opacity: 1;
+}
+
+.input-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: #f8fafc;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Button Styles */
+.btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: var(--surface-color);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: #f1f5f9;
+    border-color: var(--border-hover);
+}
+
+.loading-spinner {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.btn-primary.loading .btn-text {
+    display: none;
+}
+
+.btn-primary.loading .loading-spinner {
+    display: block;
+}
+
+/* Results Section */
+.results-section {
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.error-summary {
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--surface-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--primary-color);
+}
+
+.summary-card i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.summary-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.summary-content p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Text Display */
+.text-display-wrapper {
+    background: var(--surface-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.text-display-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.text-display-header i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.view-toggle {
+    display: flex;
+    background: var(--background-color);
+    border-radius: var(--radius-sm);
+    padding: 2px;
+}
+
+.toggle-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.text-display {
+    padding: 2rem;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 1.3rem;
+    line-height: 2;
+    direction: rtl;
+    text-align: right;
+    min-height: 150px;
+}
+
+/* Error Highlighting */
+.error-highlight {
+    background: linear-gradient(120deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.2) 100%);
+    border-bottom: 2px solid var(--error-color);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    padding: 2px 4px;
+    margin: 0 1px;
+    position: relative;
+    transition: all 0.2s ease;
+    animation: highlight 0.3s ease;
+}
+
+@keyframes highlight {
+    0% { background: rgba(239, 68, 68, 0.3); }
+    100% { background: rgba(239, 68, 68, 0.1); }
+}
+
+.error-highlight:hover {
+    background: rgba(239, 68, 68, 0.25);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+/* Suggestions Panel */
+.suggestions-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--surface-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-width: 400px;
+    width: 90%;
+    z-index: 1000;
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    background: #f8fafc;
+}
+
+.panel-header i {
+    color: var(--warning-color);
+    margin-right: 0.5rem;
+}
+
+.close-panel {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+}
+
+.close-panel:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+}
+
+.panel-content {
+    padding: 1.5rem;
+}
+
+.original-text, .suggested-text {
+    margin-bottom: 1rem;
+}
+
+.original-text label, .suggested-text label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.original-text span {
+    background: rgba(239, 68, 68, 0.1);
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    display: block;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 1.1rem;
+    direction: rtl;
+    text-align: right;
+}
+
+.suggested-text span {
+    background: rgba(16, 185, 129, 0.1);
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    display: block;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 1.1rem;
+    direction: rtl;
+    text-align: right;
+}
+
+.panel-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.panel-actions .btn-primary, .panel-actions .btn-secondary {
+    flex: 1;
+    justify-content: center;
+}
+
+/* Footer */
+.footer {
+    background: var(--text-primary);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .intro-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .input-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .text-display {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .suggestions-panel {
+        width: 95%;
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اردو گرامر چیکر | Urdu Grammar Checker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-spell-check"></i>
+                <h1>اردو گرامر چیکر</h1>
+                <span class="subtitle">Urdu Grammar Checker</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="intro-section">
+                <h2>اپنے اردو متن کی درستگی جانچیں</h2>
+                <p>Check your Urdu text for spelling, grammar, and contextual errors with AI-powered precision</p>
+            </section>
+
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="input-wrapper">
+                    <div class="input-header">
+                        <i class="fas fa-edit"></i>
+                        <span>اپنا متن یہاں لکھیں</span>
+                        <div class="char-counter">
+                            <span id="char-count">0</span> / 1000
+                        </div>
+                    </div>
+                    <textarea 
+                        id="input" 
+                        dir="rtl" 
+                        placeholder="یہاں اپنا اردو متن درج کریں جسے آپ چیک کرنا چاہتے ہیں..."
+                        maxlength="1000"
+                    ></textarea>
+                    <div class="input-actions">
+                        <button id="clearBtn" class="btn-secondary">
+                            <i class="fas fa-trash"></i>
+                            Clear
+                        </button>
+                        <button id="checkBtn" class="btn-primary">
+                            <i class="fas fa-magic"></i>
+                            <span class="btn-text">Check Grammar</span>
+                            <span class="loading-spinner"></span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="results-section" style="display: none;">
+                <!-- Error Summary -->
+                <div class="error-summary">
+                    <div class="summary-card">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div class="summary-content">
+                            <h3 id="error-count">0 errors found</h3>
+                            <p>Click on highlighted text to see suggestions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Text Display -->
+                <div class="text-display-wrapper">
+                    <div class="text-display-header">
+                        <i class="fas fa-highlighter"></i>
+                        <span>Interactive Text Review</span>
+                        <div class="view-toggle">
+                            <button class="toggle-btn active" data-view="highlighted">Highlighted</button>
+                            <button class="toggle-btn" data-view="corrected">Corrected</button>
+                        </div>
+                    </div>
+                    
+                    <div class="text-display" id="highlighted-output">
+                        <!-- Interactive highlighted text will appear here -->
+                    </div>
+                    
+                    <div class="text-display corrected-view" id="corrected-output" style="display: none;">
+                        <!-- Fully corrected text will appear here -->
+                    </div>
+                </div>
+
+                <!-- Suggestions Panel -->
+                <div class="suggestions-panel" id="suggestions-panel" style="display: none;">
+                    <div class="panel-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Suggestion</span>
+                        <button class="close-panel">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="panel-content">
+                        <div class="original-text">
+                            <label>Original:</label>
+                            <span id="original-word"></span>
+                        </div>
+                        <div class="suggested-text">
+                            <label>Suggested:</label>
+                            <span id="suggested-word"></span>
+                        </div>
+                        <div class="panel-actions">
+                            <button id="apply-suggestion" class="btn-primary">
+                                <i class="fas fa-check"></i>
+                                Apply
+                            </button>
+                            <button id="ignore-suggestion" class="btn-secondary">
+                                <i class="fas fa-times"></i>
+                                Ignore
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Urdu Grammar Checker. Powered by AI</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
