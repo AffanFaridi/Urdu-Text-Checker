@@ -100,16 +100,19 @@ Due to storage limitations on Kaggle, model conversion was performed on Google C
 
 ## 📁 Project Structure
 
-Urdu-Text-Checker/
-├── backend/
-│ ├── main.py
-│ └── requirements.txt
+```
+urdu-grammar-checker/
 ├── frontend/
-│ ├── index.html
-│ ├── style.css
-│ └── app.js
-└── README.md
-
+│   ├── index.html          # Main HTML file
+│   ├── style.css           # Styling and responsive design
+│   └── app.js              # Frontend JavaScript logic
+├── backend/
+│   └── main.py             # FastAPI server and API endpoints
+├── notebooks/
+│   ├── training.md         # Link to Kaggle training notebook
+│   └── conversion.md       # Link to Colab conversion notebook
+└── README.md               # Project documentation
+```
 
 
 
@@ -119,12 +122,15 @@ Urdu-Text-Checker/
 Analyzes and corrects Urdu text, returning structured error information.
 
 **Request Body:**
+```json
 {
   "text": "Your Urdu text here"
 }
+```
 
 
 **Response:**
+```json
 {
   "original_text": "Original input text",
   "corrected_text_full": "Fully corrected text",
@@ -138,6 +144,7 @@ Analyzes and corrects Urdu text, returning structured error information.
     }
   ]
 }
+```
 
 
 
