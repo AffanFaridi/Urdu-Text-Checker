@@ -1,4 +1,4 @@
-# 🔤 Urdu Grammar Checker
+# 🔤 Urdu Text Checker
 
 An AI-powered web application for checking and correcting Urdu text grammar, spelling, and contextual errors. Built with a custom-trained Gemma 2 model fine-tuned specifically for Urdu language correction.
 
