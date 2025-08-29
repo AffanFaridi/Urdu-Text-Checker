@@ -1,4 +1,3 @@
-```markdown
 # 🔤 Urdu Grammar Checker
 
 An AI-powered web application for checking and correcting Urdu text grammar, spelling, and contextual errors. Built with a custom-trained Gemma 2 model fine-tuned specifically for Urdu language correction.
@@ -39,42 +38,42 @@ An AI-powered web application for checking and correcting Urdu text grammar, spe
 
 ### Installation
 
-1. **Clone the repository**
-   ```
-   git clone https://github.com/your-username/Urdu-Text-Checker.git
-   cd Urdu-Text-Checker
-   ```
+1.  **Clone the repository**
+    ```
+    git clone https://github.com/AffanFaridi/Urdu-Text-Checker.git
+    cd Urdu-Text-Checker
+    ```
 
-2. **Install Ollama and setup your model**
-   ```
-   # Install Ollama (visit https://ollama.ai for installation)
-   
-   # Create your custom Urdu model in Ollama
-   # Make sure your model is named 'urdu-model' or update OLLAMA_MODEL_NAME in main.py
-   ```
+2.  **Install Ollama and setup your model**
+    ```
+    # Install Ollama (visit https://ollama.ai for installation)
+    
+    # Create your custom Urdu model in Ollama
+    # Make sure your model is named 'urdu-model' or update OLLAMA_MODEL_NAME in main.py
+    ```
 
-3. **Set up the backend**
-   ```
-   cd backend
-   pip install -r requirements.txt
-   ```
+3.  **Set up the backend**
+    ```
+    cd backend
+    pip install -r requirements.txt
+    ```
 
-4. **Run the application**
-   ```
-   # Start the backend server
-   uvicorn main:app --reload
-   
-   # Open index.html in your browser or serve with a local server
-   # For development: python -m http.server 8080
-   ```
+4.  **Run the application**
+    ```
+    # Start the backend server from the 'backend' directory
+    uvicorn main:app --reload
+    
+    # Open index.html in your browser or serve with a local server from the 'frontend' directory
+    # For development: python -m http.server 8080
+    ```
 
 ### Usage
 
-1. Open the web application in your browser
-2. Enter Urdu text in the input textarea
-3. Click "Check Grammar" to analyze the text
-4. Review highlighted errors and click on them to see suggestions
-5. Apply corrections or ignore suggestions as needed
+1.  Open the web application in your browser
+2.  Enter Urdu text in the input textarea
+3.  Click "Check Grammar" to analyze the text
+4.  Review highlighted errors and click on them to see suggestions
+5.  Apply corrections or ignore suggestions as needed
 
 ## 🤖 Model Training Process
 
@@ -101,19 +100,18 @@ Due to storage limitations on Kaggle, model conversion was performed on Google C
 
 ## 📁 Project Structure
 
-```
-urdu-grammar-checker/
-├── frontend/
-│   ├── index.html          # Main HTML file
-│   ├── style.css           # Styling and responsive design
-│   └── app.js              # Frontend JavaScript logic
+Urdu-Text-Checker/
 ├── backend/
-│   └── main.py             # FastAPI server and API endpoints
-├── notebooks/
-│   ├── training.md         # Link to Kaggle training notebook
-│   └── conversion.md       # Link to Colab conversion notebook
-└── README.md               # Project documentation
-```
+│ ├── main.py
+│ └── requirements.txt
+├── frontend/
+│ ├── index.html
+│ ├── style.css
+│ └── app.js
+└── README.md
+
+
+
 
 ## 🔧 API Endpoints
 
@@ -121,28 +119,26 @@ urdu-grammar-checker/
 Analyzes and corrects Urdu text, returning structured error information.
 
 **Request Body:**
-```
 {
-  "text": "Your Urdu text here"
+"text": "Your Urdu text here"
 }
-```
+
 
 **Response:**
-```
 {
-  "original_text": "Original input text",
-  "corrected_text_full": "Fully corrected text",
-  "errors": [
-    {
-      "text": "Error text",
-      "start": 0,
-      "end": 5,
-      "suggestions": ["Correction suggestion"],
-      "reason": "Grammar/spelling correction"
-    }
-  ]
+"original_text": "Original input text",
+"corrected_text_full": "Fully corrected text",
+"errors": [
+{
+"text": "Error text",
+"start": 0,
+"end": 5,
+"suggestions": ["Correction suggestion"],
+"reason": "Grammar/spelling correction"
 }
-```
+]
+}
+
 
 ### `GET /health`
 Health check endpoint to verify API and model status.
@@ -172,11 +168,11 @@ The backend uses a simple configuration in `main.py`:
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1.  Fork the repository
+2.  Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
 ## 📝 License
 
@@ -184,7 +180,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Affan Faridi**
 - GitHub: [@AffanFaridi](https://github.com/AffanFaridi)
 
 ## 🙏 Acknowledgments
@@ -203,4 +199,5 @@ If you encounter any issues or have questions, please open an issue on GitHub or
 <div align="center">
   <p>Made with ❤️ for the Urdu language community</p>
 </div>
-```
+
+
