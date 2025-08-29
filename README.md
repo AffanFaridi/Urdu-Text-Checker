@@ -102,12 +102,12 @@ Due to storage limitations on Kaggle, model conversion was performed on Google C
 
 Urdu-Text-Checker/
 ├── backend/
-│ ├── main.py
-│ └── requirements.txt
+│   ├── main.py
+│   └── requirements.txt
 ├── frontend/
-│ ├── index.html
-│ ├── style.css
-│ └── app.js
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
 └── README.md
 
 
@@ -126,17 +126,29 @@ Analyzes and corrects Urdu text, returning structured error information.
 
 **Response:**
 {
+
 "original_text": "Original input text",
+
 "corrected_text_full": "Fully corrected text",
+
 "errors": [
+
 {
+
 "text": "Error text",
+
 "start": 0,
+
 "end": 5,
+
 "suggestions": ["Correction suggestion"],
+
 "reason": "Grammar/spelling correction"
+
 }
+
 ]
+
 }
 
 
